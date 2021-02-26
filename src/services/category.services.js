@@ -23,7 +23,7 @@ const dbStoreItems = async (listOfItems) => {
   return val;
 };
 
-const fetchData = async (category) => {
+const storeInDb = async (category) => {
   let result;
   let val;
   let listOfItems = [];
@@ -50,6 +50,7 @@ const fetchData = async (category) => {
   result = await dbStoreItems(listofAllItem);
   return val;
 };
+
 const getFeatures = async (category) => {
   const arr = [];
   let result = await Item.findAll({
@@ -69,13 +70,13 @@ const getFeatures = async (category) => {
     group: ['brand'],
   }).then((items) => items.map((item) => item.brand));
   arr.push(result);
-  console.log(arr);
-  console.log(48, typeof result);
+  // console.log(arr);
+  // console.log(48, typeof result);
   return arr;
 };
 
 module.exports = {
-  fetchData,
+  storeInDb,
   dbStoreItems,
   getFeatures,
 };
