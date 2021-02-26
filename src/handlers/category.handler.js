@@ -1,6 +1,6 @@
 const todoService = require('../services/category.services');
 
-const categoryHandler = async (req, res) => {
+const storeInDb = async (req, res) => {
   // const result = await todoService.fetchData();
   // console.log(5, result);
   const { category } = req.body;
@@ -9,6 +9,14 @@ const categoryHandler = async (req, res) => {
   res.status(200).send(result);
 };
 
+const getFeatures = async (req, res) => {
+  const { category } = req.params;
+  const result = await todoService.getFeatures(category);
+  console.log(category);
+  res.status(200).json({ Features: result });
+};
+
 module.exports = {
-  categoryHandler,
+  storeInDb,
+  getFeatures,
 };

@@ -1,12 +1,12 @@
 const express = require('express');
 const {
-  categoryHandler,
+  storeInDb, getFeatures,
 } = require('../handlers');
 
 const router = express.Router();
 
-router.put('/:category', categoryHandler);
-
+router.put('/:category', storeInDb);
+router.get('/:category', getFeatures);
 module.exports = {
   router,
 };

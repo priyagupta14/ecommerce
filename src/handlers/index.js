@@ -1,7 +1,8 @@
 const { healthHandler } = require('./health.handler');
-const { categoryHandler } = require('./category.handler');
+const { storeInDb, getFeatures } = require('./category.handler');
 
 module.exports = {
   healthHandler,
-  categoryHandler,
+  storeInDb,
+  getFeatures,
 };

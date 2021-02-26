@@ -9,6 +9,8 @@ module.exports = {
       },
       categoryName: {
         type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
       },
       categories: {
         type: Sequelize.ARRAY(Sequelize.STRING),
